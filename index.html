@@ -1,95 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rupesh Bhandari - AI/ML Engineer Portfolio</title>
-    <link rel="stylesheet" href="csss.css">
-    <script defer src="script.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rupesh — Aspiring AI/ML Engineer</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="csss.css">
 </head>
-<body>
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#certificates">Certificates</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#ai">AI Assistant</a></li>
-        </ul>
-    </nav>
+<body class="dark-mode">
 
-    <section id="home">
-        <h1>Welcome to My AI/ML Portfolio</h1>
-        <h2>Aspiring AI/ML Engineer</h2>
-        <p>
-            I am currently pursuing AI and ML engineering, passionate about leveraging data to build 
-            intelligent, impactful solutions. Focused on deep learning, NLP, and data analytics, I aim to contribute 
-            to projects that push the boundaries of AI.  
-        </p>
-        <p>
-            Always eager to connect and collaborate in the AI/ML space.
-        </p>
-        <a href="https://docs.google.com/document/d/1MNXQKlecu8MXqE0YAQe00kOT5eiqCBKG/" class="resume-button" target="_blank">
-            View My Resume
-        </a>
-    </section>
+<nav class="nav-wrap">
+  <div class="container nav">
+    <a href="#home" class="logo">Rupesh</a>
+    <ul class="nav-links">
+      <li><a href="#research">Research</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certificates">Certificates</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-buttons">
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme"></button>
+    </div>
+  </div>
+</nav>
 
-    <section id="research">
-        <h2>Research</h2>
-        <p>Exploring AI and ML techniques for optimization and efficiency.</p>
-    </section>
-
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>AI-Driven Recommendation System</h3>
-            <p>Building a personalized recommendation system using deep learning.</p>
+<main class="container">
+<section id="home" class="hero">
+  <div class="hero-left">
+    <h1 class="hero-title">Hi, I'm Rupesh<br><span class="hero-subtitle">Aspiring <span class="accent">AI / ML</span> Engineer</span></h1>
+    <p class="hero-description">I build intelligent systems that learn from data</p>
+    <a class="button" href="#projects">See Projects</a>
+  </div>
+  <div class="hero-right">
+    <div class="skills-card">
+        <div class="skill-item">
+            <h3>Deep Learning</h3>
+            <p>CNNs, Transformers</p>
         </div>
-        <div class="project">
-            <h3>Image Recognition Model</h3>
-            <p>Developed a CNN-based deep learning model for image classification.</p>
+        <div class="skill-item">
+            <h3>NLP</h3>
+            <p>Text pipelines & embeddings</p>
         </div>
-    </section>
+        <div class="skill-item">
+            <h3>Data</h3>
+            <p>ETL, visualization</p>
+        </div>
+    </div>
+  </div>
+</section>
 
-    <section id="certificates">
-        <h2>Certificates</h2>
-        <div class="certificate">
-            <h3>Certificate 1</h3>
-            <a href="https://drive.google.com/file/d/1IPg1l0_SK7m7WhHzdJWjE_pKx8MRgAfL/view?usp=sharing" target="_blank">View Certificate</a>
-        </div>
-        <div class="certificate">
-            <h3>Certificate 2</h3>
-            <a href="https://drive.google.com/file/d/1UwrlakmOU3kZ2IwIyHwsZ0iR5o8ZsjRs/view?usp=sharing" target="_blank">View Certificate</a>
-        </div>
-    </section>
+<section id="research">
+  <h2>Research</h2>
+  <p class="section-subtitle">Exploring optimization techniques, efficiency in training, and model interpretability.</p>
+  <div class="grid-container">
+      <div class="card">
+          <h3>Efficient Transformers</h3>
+          <p>Work on reducing self-attention compute using locality-aware methods</p>
+      </div>
+      <div class="card">
+          <h3>Model Compression</h3>
+          <p>Pruning and quantization for deployment on edge devices</p>
+      </div>
+  </div>
+</section>
 
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Email: <a href="mailto:rupeshbhandari3750@gmail.com">rupeshbhandari3750@gmail.com</a></p>
-        <div class="social-links">
-            <a href="https://github.com/ru-pesh" target="_blank" style="display: flex; align-items: center; gap: 4px;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.984-.399 3.003-.404 1.018.005 2.046.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12z"/></svg>
-                GitHub
-            </a>
-            <a href="https://www.linkedin.com/in/ru-pesh/" target="_blank" style="display: flex; align-items: center; gap: 4px;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.838-1.563 3.036 0 3.597 2.001 3.597 4.599v5.597z"/></svg>
-                LinkedIn
-            </a>
-        </div>
-        <form>
-            <input type="text" placeholder="Your Name">
-            <input type="email" placeholder="Your Email">
-            <textarea placeholder="Your Message"></textarea>
-            <button type="submit">Send</button>
-        </form>
-    </section>
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="grid-container">
+      <div class="card">
+          <h3>AI Recommendation System</h3>
+          <p>CNN + transfer learning for image classification and analysis.</p>
+      </div>
+      <div class="card">
+          <h3>Image Recognition Model</h3>
+          <p>Deep learning models for personalized content delivery.</p>
+      </div>
+  </div>
+</section>
 
-    <section id="ai">
+<section id="certificates">
+  <h2>Certificates</h2>
+  <div class="grid-container">
+      <div class="card">
+          <h3>Certificate 1</h3>
+          <a href="https://drive.google.com/file/d/1IPg1l0_SK7m7WhHzdJWjE_pKx8MRgAfL/view?usp=sharing" target="_blank" class="accent-link">View Certificate</a>
+      </div>
+      <div class="card">
+          <h3>Certificate 2</h3>
+          <a href="https://drive.google.com/file/d/1UwrlakmOU3kZ2IwIyHwsZ0iR5o8ZsjRs/view?usp=sharing" target="_blank" class="accent-link">View Certificate</a>
+      </div>
+  </div>
+</section>
+
+<section id="ai">
+    <div class="ai-assistant-card">
         <h2>AI Assistant</h2>
-        <input type="text" id="user-input" placeholder="Ask something...">
-        <button onclick="askAI()">Ask AI</button>
-        <p id="ai-response"></p>
-    </section>
+        <div class="chat-container" id="chat-container">
+            <div class="ai-message-static">
+                <p>Tell me about your projects</p>
+            </div>
+             <div id="ai-response-area"></div>
+        </div>
+        <button class="ask-button" onclick="askAI()">
+            Ask me about
+            <span>&rarr;</span>
+        </button>
+    </div>
+</section>
+
+
+<section id="contact">
+  <h2>Contact Me</h2>
+  <form>
+    <input type="text" placeholder="Your Name">
+    <input type="email" placeholder="Your Email">
+    <textarea placeholder="Your Message"></textarea>
+    <button type="submit" class="button">Send</button>
+  </form>
+</section>
+
+</main>
+
+<script src="script.js"></script>
 </body>
 </html>
+
