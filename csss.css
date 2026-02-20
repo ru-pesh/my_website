@@ -6,11 +6,11 @@
     --accent-blue: #3b82f6;
     --border-dark: rgba(255, 255, 255, 0.1);
 
-    --bg-light: #f9fafb;
+    --bg-light: #faf8f5;
     --card-light: #ffffff;
-    --text-dark: #111827;
-    --text-muted-light: #4b5563;
-    --border-light: rgba(0, 0, 0, 0.1);
+    --text-dark: #2d3748;
+    --text-muted-light: #718096;
+    --border-light: rgba(45, 55, 72, 0.08);
 }
 
 body {
@@ -87,8 +87,8 @@ h2 {
 }
 
 body.light-mode .nav-wrap {
-    background: rgba(249, 250, 251, 0.8);
-    border-bottom: 2px solid var(--border-light);
+    background: rgba(250, 248, 245, 0.85);
+    border-bottom: 1px solid var(--border-light);
 }
 
 .nav {
@@ -102,6 +102,12 @@ body.light-mode .nav-wrap {
     font-weight: 700;
     text-decoration: none;
     color: inherit;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: inline-block;
+}
+
+.logo:hover {
+    transform: scale(1.15);
 }
 
 .nav-links {
@@ -115,15 +121,18 @@ body.light-mode .nav-wrap {
 .nav-links a {
     text-decoration: none;
     color: var(--text-muted);
-    transition: color 0.3s;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background-color: transparent;
 }
 
-.nav-links a:hover {
-    color: var(--text-light);
-}
-
-body.light-mode .nav-links a:hover {
-    color: var(--text-dark);
+.nav-links a:hover,
+.nav-links a.active {
+    color: #ffffff;
+    background-color: var(--accent-blue);
+    box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
 }
 
 .theme-toggle {
@@ -158,23 +167,23 @@ body.light-mode .theme-toggle {
 }
 
 .moon-icon {
-    opacity: 1;
-    transform: rotate(0) scale(1);
-}
-
-.sun-icon {
-    opacity: 0;
-    transform: rotate(-90deg) scale(0.5);
-}
-
-body.light-mode .moon-icon {
     opacity: 0;
     transform: rotate(90deg) scale(0.5);
 }
 
-body.light-mode .sun-icon {
+.sun-icon {
     opacity: 1;
     transform: rotate(0) scale(1);
+}
+
+body.light-mode .moon-icon {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+}
+
+body.light-mode .sun-icon {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.5);
 }
 
 .hero {
@@ -196,6 +205,46 @@ body.light-mode .sun-icon {
     font-size: 3.5rem;
     line-height: 1.2;
     margin: 0;
+    opacity: 0;
+    animation: text-reveal 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes text-reveal {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+        filter: blur(8px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+.animated-gradient {
+    background: linear-gradient(90deg, #3b82f6, #10b981, #8b5cf6, #3b82f6);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    animation: gradient-flow 6s ease-in-out infinite;
+}
+
+@keyframes gradient-flow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .hero-subtitle {
@@ -272,6 +321,7 @@ body.dark-mode .card {
 body.light-mode .card {
     background-color: var(--card-light);
     border: 1px solid var(--border-light);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
 }
 
 .card h3 {
@@ -397,6 +447,8 @@ body.dark-mode textarea {
 body.light-mode input,
 body.light-mode textarea {
     border-color: var(--border-light);
+    background-color: #ffffff;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
 }
 
 textarea {
