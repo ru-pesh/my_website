@@ -1,9 +1,10 @@
 // ====== script.js: AI Assistant, Theme Toggle, Scroll Animations ======
 
+
 // AI Assistant Function
 function askAI() {
     const responseArea = document.getElementById('ai-response-area');
-    
+
     // Clear previous response
     responseArea.innerHTML = '';
 
@@ -18,7 +19,7 @@ function askAI() {
     // After a short delay, show the actual response
     setTimeout(() => {
         aiRespContainer.textContent = 'I build recommendation systems, image recognition models and NLP prototypes — check the Projects section for details.';
-        
+
         // Scroll to the bottom of the chat container if it's scrollable
         const chatContainer = document.getElementById('chat-container');
         chatContainer.scrollTop = chatContainer.scrollHeight;
@@ -38,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.remove('dark-mode');
         document.body.classList.add('light-mode');
     }
-    
+
     // Trigger the scroll animation check on load
     const sections = document.querySelectorAll('section');
     sections.forEach(section => {
@@ -72,7 +73,7 @@ const navLinks = document.querySelectorAll('.nav-links a');
 
 window.addEventListener('scroll', () => {
     let current = '';
-    
+
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         // Adjust offset to trigger active state change a bit before reaching the top
