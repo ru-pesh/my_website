@@ -142,11 +142,12 @@
 
     <section id="contact">
       <h2>Contact Me</h2>
-      <form>
-        <input type="text" placeholder="Your Name">
-        <input type="email" placeholder="Your Email">
-        <textarea placeholder="Your Message"></textarea>
-        <button type="submit" class="button">Send</button>
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="f7608c0d-f3f1-48fa-a004-ca4aa13535c7">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit" class="button">Submit Form</button>
       </form>
     </section>
 
