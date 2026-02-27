@@ -38,6 +38,19 @@ body.light-mode {
     padding: 0 20px;
 }
 
+.nav-container {
+    padding: 0 40px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.nav-wrap.scrolled .nav-container {
+    padding: 0;
+}
+
 main.container {
     padding-top: 100px;
 }
@@ -78,23 +91,47 @@ h2 {
 .nav-wrap {
     position: fixed;
     width: 100%;
+    max-width: 100%;
     top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 1000;
     padding: 20px 0;
     background: rgba(17, 24, 39, 0.8);
-    backdrop-filter: blur(10px);
-    border-bottom: 2px solid var(--border-dark);
+    backdrop-filter: blur(5px);
+    border: 1px solid transparent;
+    border-bottom: 1px solid var(--border-dark);
+    border-radius: 0;
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.nav-wrap.scrolled {
+    max-width: 900px;
+    top: 20px;
+    padding: 10px 30px;
+    background: rgba(17, 24, 39, 0.6);
+    border: 1px solid var(--border-dark);
+    border-radius: 50px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 body.light-mode .nav-wrap {
     background: rgba(250, 248, 245, 0.85);
+    border: 1px solid transparent;
     border-bottom: 1px solid var(--border-light);
+}
+
+body.light-mode .nav-wrap.scrolled {
+    background: rgba(250, 248, 245, 0.65);
+    border: 1px solid var(--border-light);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 .logo {
@@ -120,7 +157,8 @@ body.light-mode .nav-wrap {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--text-muted);
+    color: #cbd5e1;
+    /* Lighter color */
     transition: all 0.3s ease;
     position: relative;
     padding: 8px 16px;
@@ -133,6 +171,11 @@ body.light-mode .nav-wrap {
     color: #ffffff;
     background-color: var(--accent-blue);
     box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+}
+
+body.light-mode .nav-links a {
+    color: #475569;
+    /* Lighter slate gray for light mode */
 }
 
 .nav-buttons {

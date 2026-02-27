@@ -73,45 +73,55 @@ const navLinks = document.querySelectorAll('.nav-links a');
 
 
 
-const form = document.getElementById('form');
-const submitBtn = form.querySelector('button[type="submit"]');
+const form = document.getElementById('contact-form');
 
-form.addEventListener('submit', async (e) => {
-    e.preventDefault();
+if (form) {
+    const submitBtn = form.querySelector('button[type="submit"]');
 
-    const formData = new FormData(form);
-    formData.append("access_key", "f7608c0d-f3f1-48fa-a004-ca4aa13535c7");
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
 
-    const originalText = submitBtn.textContent;
+        const formData = new FormData(form);
+        formData.append("access_key", "f7608c0d-f3f1-48fa-a004-ca4aa13535c7");
 
-    submitBtn.textContent = "Sending...";
-    submitBtn.disabled = true;
+        const originalText = submitBtn.textContent;
 
-    try {
-        const response = await fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            body: formData
-        });
+        submitBtn.textContent = "Sending...";
+        submitBtn.disabled = true;
 
-        const data = await response.json();
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData
+            });
 
-        if (response.ok) {
-            alert("Success! Your message has been sent.");
-            form.reset();
-        } else {
-            alert("Error: " + data.message);
+            const data = await response.json();
+
+            if (response.ok) {
+                alert("Success! Your message has been sent.");
+                form.reset();
+            } else {
+                alert("Error: " + data.message);
+            }
+
+        } catch (error) {
+            alert("Something went wrong. Please try again.");
+        } finally {
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
         }
-
-    } catch (error) {
-        alert("Something went wrong. Please try again.");
-    } finally {
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-    }
-});
+    });
+}
 
 window.addEventListener('scroll', () => {
     let current = '';
+
+    const navWrap = document.querySelector('.nav-wrap');
+    if (window.scrollY > 50) {
+        navWrap.classList.add('scrolled');
+    } else {
+        navWrap.classList.remove('scrolled');
+    }
 
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
