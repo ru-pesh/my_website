@@ -185,20 +185,36 @@ body.light-mode .nav-links a {
 }
 
 .nav-resume-button {
-    background: linear-gradient(135deg, var(--accent-blue), #8b5cf6);
+    background: linear-gradient(90deg, var(--accent-blue), #8b5cf6, var(--accent-blue));
+    background-size: 200% 100%;
     color: #ffffff;
     padding: 8px 22px;
     border-radius: 25px;
     text-decoration: none;
     font-weight: 600;
     font-size: 0.95rem;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
     position: relative;
     overflow: hidden;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    animation: gradient-flow 3s ease infinite, pulse-scale 2s ease-in-out infinite;
+}
+
+@keyframes pulse-scale {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 .nav-resume-button::before {
@@ -224,9 +240,9 @@ body.light-mode .nav-resume-button {
 }
 
 .nav-resume-button:hover {
-    transform: translateY(-2px);
     box-shadow: 0 6px 18px rgba(139, 92, 246, 0.5);
     color: #ffffff;
+    animation-play-state: paused;
 }
 
 .nav-resume-button:hover::before {
