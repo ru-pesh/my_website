@@ -456,6 +456,13 @@ body.light-mode .card {
     font-weight: 500;
 }
 
+a.certificate-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
 
 
 .ai-assistant-card {
