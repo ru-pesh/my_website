@@ -446,7 +446,8 @@ body.light-mode .card {
     margin-top: 0;
 }
 
-.card p {
+.card p,
+.card li {
     color: var(--text-muted);
 }
 
